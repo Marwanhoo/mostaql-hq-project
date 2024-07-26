@@ -199,7 +199,7 @@ class DataChat {
   ];
   static List<String> myItemChat = [
     "Hello Dear , Welcome",
-    "Chat AI Dr Pharma ☺",
+    "Chat Hq mostaql ☺",
     "No , English only",
     "Your Welcome 😍",
   ];

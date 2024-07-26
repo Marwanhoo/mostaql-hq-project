@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mostaql_hq_project/colors/app_colors.dart';
 import 'package:mostaql_hq_project/components/components.dart';
 import 'package:mostaql_hq_project/styles/app_styles.dart';
+import 'package:mostaql_hq_project/widgets/quantity_add_and_remove_widget.dart';
+import 'package:mostaql_hq_project/widgets/size_pizza_widget.dart';
 
 class PizzaTabonScreen extends StatelessWidget {
   const PizzaTabonScreen({super.key});
@@ -11,7 +13,7 @@ class PizzaTabonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context,"Pizza Tabon"),
+      appBar: buildAppBar(context, "Pizza Tabon"),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -41,13 +43,11 @@ class PizzaTabonScreen extends StatelessWidget {
                           child: SvgPicture.asset("assets/svg/repeat.svg"),
                         ),
                         const SizedBox(height: 5),
-        
                         CircleAvatar(
                           backgroundColor: Colors.white,
                           child: SvgPicture.asset("assets/svg/share.svg"),
                         ),
                         const SizedBox(height: 5),
-        
                         CircleAvatar(
                           backgroundColor: Colors.white,
                           child: SvgPicture.asset("assets/svg/flag.svg"),
@@ -82,13 +82,19 @@ class PizzaTabonScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: Text("5.0",style: TextStyle(
-                      color: AppColors.yellowColor,
-                    ),),
+                    child: Text(
+                      "5.0",
+                      style: TextStyle(
+                        color: AppColors.yellowColor,
+                      ),
+                    ),
                   ),
-                  Text("5 Reviews",style: TextStyle(
-                    color: AppColors.greyColor2,
-                  ),),
+                  Text(
+                    "5 Reviews",
+                    style: TextStyle(
+                      color: AppColors.greyColor2,
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 5),
@@ -96,12 +102,14 @@ class PizzaTabonScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text("Orders : ",style: TextStyle(
-                        color: AppColors.greyColor2,
-                      )),
-                      const Text("17",style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
+                      Text("Orders : ",
+                          style: TextStyle(
+                            color: AppColors.greyColor2,
+                          )),
+                      const Text("17",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          )),
                     ],
                   ),
                   const Padding(
@@ -110,21 +118,63 @@ class PizzaTabonScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text("Available Quantity : ",style: TextStyle(
-                        color: AppColors.greyColor2,
-                      )),
-                      const Text("17",style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
+                      Text("Available Quantity : ",
+                          style: TextStyle(
+                            color: AppColors.greyColor2,
+                          )),
+                      const Text("17",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          )),
                     ],
                   ),
                 ],
               ),
               const SizedBox(height: 5),
               buildDivider(),
-              buildListTile(title: "Select Specifications And Quantity"),
+              buildListTile(
+                title: "Select Specifications And Quantity",
+                onTap: () {
+                  showModalBottomSheet(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        padding: const EdgeInsets.all(16),
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.75,
+                        child:  Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                 const Text("Select Specifications And Quantity"),
+                                CloseButton(
+                                  onPressed: (){
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            ),
+                            const Text("Quantity"),
+                            const SizedBox(height: 5),
+                             const QuantityAddAndRemoveWidget(),
+                            const SizedBox(height: 10),
+                            const Text("Size"),
+                            const SizePizzaWidget(),
+
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
               buildDivider(),
-              buildListTile(title: "Product Details",),
+              buildListTile(
+                title: "Product Details",
+              ),
               buildDivider(),
               buildListTile(title: "Return Policy"),
               buildDivider(),
@@ -135,3 +185,6 @@ class PizzaTabonScreen extends StatelessWidget {
     );
   }
 }
+
+
+
