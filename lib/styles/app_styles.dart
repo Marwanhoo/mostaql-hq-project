@@ -66,6 +66,29 @@ class AppStyles {
     ),
   );
 
+  static TextStyle style13popW400 = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+      fontSize: 13,
+      fontWeight: FontWeight.w400,
+    ),
+  );
+
+  static TextStyle style14interW500 = GoogleFonts.inter(
+    textStyle: TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 14,
+      color: AppColors.greyColor4,
+    ),
+  );
+
+
+
+
+
+
+
+
+
 
 
 

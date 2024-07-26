@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mostaql_hq_project/colors/app_colors.dart';
+import 'package:mostaql_hq_project/test_ui.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -17,9 +18,11 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),),
         ),
-        body: const Center(
-          child: Text("ProfileScreen"),
-        )
+        body: Column(
+          children: [
+            BarChartSample6(),
+          ],
+        ),
     );
   }
 }

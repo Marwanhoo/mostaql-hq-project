@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mostaql_hq_project/layout/home_layout.dart';
+import 'package:mostaql_hq_project/screens/orders_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +16,11 @@ class MyApp extends StatelessWidget {
       title: 'Muhammad Marwan',
       theme: ThemeData(
         useMaterial3: true,
-        textTheme: GoogleFonts.poppinsTextTheme(),
       ),
       home: const HomeLayout(),
     );
   }
 }
+
+
+
