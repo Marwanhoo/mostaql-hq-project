@@ -5,6 +5,8 @@ import 'package:mostaql_hq_project/colors/app_colors.dart';
 import 'package:mostaql_hq_project/components/components.dart';
 import 'package:mostaql_hq_project/styles/app_styles.dart';
 import 'package:mostaql_hq_project/widgets/quantity_add_and_remove_widget.dart';
+import 'package:mostaql_hq_project/widgets/select_check_list_tile_pizza_widget.dart';
+import 'package:mostaql_hq_project/widgets/select_radio_list_tile_pizza_widget.dart';
 import 'package:mostaql_hq_project/widgets/size_pizza_widget.dart';
 
 class PizzaTabonScreen extends StatelessWidget {
@@ -143,28 +145,49 @@ class PizzaTabonScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(16),
                         width: double.infinity,
                         height: MediaQuery.of(context).size.height * 0.75,
-                        child:  Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                 const Text("Select Specifications And Quantity"),
-                                CloseButton(
-                                  onPressed: (){
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                              ],
-                            ),
-                            const Text("Quantity"),
-                            const SizedBox(height: 5),
-                             const QuantityAddAndRemoveWidget(),
-                            const SizedBox(height: 10),
-                            const Text("Size"),
-                            const SizePizzaWidget(),
-
-                          ],
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                      "Select Specifications And Quantity"),
+                                  CloseButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ],
+                              ),
+                              const Text("Quantity"),
+                              const SizedBox(height: 5),
+                              const QuantityAddAndRemoveWidget(),
+                              const SizedBox(height: 10),
+                              const Text("Size"),
+                              const SizedBox(height: 5),
+                              const SizePizzaWidget(),
+                              const SizedBox(height: 10),
+                              const Text("Select The Dough"),
+                              const SizedBox(height: 5),
+                              const SelectTheDoughPizzaWidget(),
+                              const SizedBox(height: 10),
+                              const Text("Sauce Type"),
+                              const SizedBox(height: 5),
+                              const SelectSauceTypePizzaWidget(),
+                              const SizedBox(height: 10),
+                              const Text("Additional Choices"),
+                              const SizedBox(height: 5),
+                              const AdditionalChoicesPizzaWidget(),
+                              const SizedBox(height: 10),
+                              const Text("Additional Choices"),
+                              const SizedBox(height: 5),
+                              const RemoveChoicesPizzaWidget(),
+                              const SizedBox(height: 10),
+                            ],
+                          ),
                         ),
                       );
                     },
@@ -185,6 +208,3 @@ class PizzaTabonScreen extends StatelessWidget {
     );
   }
 }
-
-
-
