@@ -21,7 +21,7 @@ A few resources to get you started if this is your first Flutter project:
 <img src="https://github.com/user-attachments/assets/8177370f-9278-4752-887e-28ac966f27c1" width="500" > <br>
 
 
-- [Link Figma Design]([https://docs.flutter.dev/get-started/codelab](https://www.figma.com/design/pXw6cspZH1X8egMKfwoPYr/HQ-Flutter-Projects?node-id=0-1&t=ua8cQ3y2pdKSG29m-1))
+- [Link Figma Design](https://www.figma.com/design/pXw6cspZH1X8egMKfwoPYr/HQ-Flutter-Projects?node-id=0-1&t=ua8cQ3y2pdKSG29m-1)
 
 
 For help getting started with Flutter development, view the
