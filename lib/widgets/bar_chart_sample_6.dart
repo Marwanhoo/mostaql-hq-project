@@ -10,8 +10,8 @@ class BarChartSample6 extends StatelessWidget {
   BarChartGroupData generateGroupData(
       int x,
       double blueValue,
-      double redValue,
-      double yellowValue,
+      double greenValue,
+      double greyValue,
       ) {
     return BarChartGroupData(
       x: x,
@@ -20,19 +20,19 @@ class BarChartSample6 extends StatelessWidget {
         BarChartRodData(
           fromY: 0,
           toY: blueValue,
-          color: Colors.blue, // Matching the color in the image
+          color: const Color(0XFF3AC2CB), // Matching the color in the image
           width: 5,
         ),
         BarChartRodData(
           fromY: blueValue + betweenSpace,
-          toY: blueValue + betweenSpace + redValue,
-          color: Colors.red, // Matching the color in the image
+          toY: blueValue + betweenSpace + greenValue,
+          color: Colors.lightGreenAccent, // Matching the color in the image
           width: 5,
         ),
         BarChartRodData(
-          fromY: blueValue + betweenSpace + redValue + betweenSpace,
-          toY: blueValue + betweenSpace + redValue + betweenSpace + yellowValue,
-          color: Colors.yellow, // Matching the color in the image
+          fromY: blueValue + betweenSpace + greenValue + betweenSpace,
+          toY: blueValue + betweenSpace + greenValue + betweenSpace + greyValue,
+          color: Colors.grey, // Matching the color in the image
           width: 5,
         ),
       ],

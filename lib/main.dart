@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mostaql_hq_project/layout/home_layout.dart';
-import 'package:mostaql_hq_project/screens/orders_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +20,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-

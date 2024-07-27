@@ -110,13 +110,14 @@ class _SelectSauceTypePizzaWidgetState
     required String text,
   }) {
     return RadioListTile<String>(
+      activeColor: AppColors.primaryColor,
       contentPadding: EdgeInsets.zero,
       visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
       dense: true,
       title: Row(
         children: [
           Text(text),
-          SizedBox(width: 10,),
+          const SizedBox(width: 10,),
           Text(
             "(+3 SAR)",
             style: TextStyle(
